@@ -1,0 +1,114 @@
+/* general */
+.container-fluid {
+  border: 1px solid #ededed;
+  margin: 10px;
+  color: #444;
+}
+.row {
+  width:100%;
+}
+.column {
+  flex: auto;
+}
+
+header {
+  font-weight: bold;
+  padding-top:40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ededed;
+  text-align: center;
+  display:flex;
+  justify-content: space-between;
+}
+
+a, .action {
+  color:#4e9dd4;
+}
+
+/* contacts */
+.contacts header {
+  justify-content: center;
+}
+.contacts .person-icon{
+  width:33%;
+}
+.contacts .star
+{
+  text-align: right;
+  padding: 3px 5px;
+  width: 8%;
+}
+.contacts .data
+{
+  width: 58%;
+}
+.contacts .name{
+  font-size: 1.2em;
+}
+.contacts .company{
+  font-size: .9em;
+  color: #b2b2b2;
+}
+ul {
+  list-style: none;
+  margin:0;
+  padding: 0;
+}
+ul:last-child {
+margin-bottom: 15px;
+}
+li {
+  border-bottom: 1px solid #ededed;
+  padding: 15px;
+  margin: 15px;
+}
+
+li:last-child{
+  margin-bottom: -17px;
+  border: none;
+}
+
+.list-title {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 500;
+  font-size: .8em;
+  line-height: 2.2em;
+  border-bottom: 1px solid #ededed;
+  background-color: #f4f4f4;
+}
+
+/* Person row */
+
+.person {
+  display:flex;
+}
+
+.row {
+  width: 100%
+}
+
+.person-details .card {
+  padding:25px;
+  text-align: center;
+}
+.person-details .person-icon img{
+  width: 55%;
+  max-width: 300px;
+}
+.person-details .card .name {
+  font-size: 1.6em;
+}
+
+.person-details .card .company {
+  font-size: 1em;
+  color: #b2b2b2;
+}
+
+.person-details ul li .title{
+font-size: .8em;
+color: #b2b2b2;
+}
