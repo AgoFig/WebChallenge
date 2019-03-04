@@ -22,11 +22,11 @@ class App extends Component {
     this.getPerson = this.getPerson.bind(this)
   }
   enableDetailState(id) {
-     this.setState({person: this.getPerson(id)});
-      this.setState({personDetailViewIsActive: true})
+    this.setState({person: this.getPerson(id)});
+    this.setState({personDetailViewIsActive: true})
   }
   disableDetailState() {
-     this.setState({personDetailViewIsActive: false})
+    this.setState({personDetailViewIsActive: false})
   }
   getPerson(id){
     return this.state.allContacts.find((element) => {
@@ -47,6 +47,8 @@ class App extends Component {
           otherContacts.push(allContacts[i]);
         }
       }
+      favoriteContacts = this.sort(favoriteContacts);
+      otherContacts = this.sort(otherContacts);
       this.setState({
         allContacts: allContacts,
         favoriteContacts: favoriteContacts,
@@ -54,41 +56,38 @@ class App extends Component {
       })
     })
   }
+  sort(arrayToBeSorted){
+    return  arrayToBeSorted.sort(function(a, b){
+      if(a.name < b.name) { return -1; }
+      if(a.name > b.name) { return 1; }
+      return 0;
+    })
+  }
   render() {
-    if(this.state.personDetailViewIsActive === true
-  ) {
-    if( this.state.person !== null){
-
-      return <PersonDetails person={this.state.person}
-        backHandler={this.disableDetailState} />
-    }else {
-      return 'no person found'
-    }
+    if(this.state.personDetailViewIsActive === true) {
+      if(this.state.person !== null){
+        return <PersonDetails person={this.state.person}
+          backHandler={this.disableDetailState} />
+      } else {
+        return 'no person found'
+      }
     } else {
       return this.getLists();
     }
   }
   getLists()
   {
-    if (this.state.favoriteContacts.length > 0) {
-      return (
-        <div className="container-fluid">
-          <PersonList title="FAVORITE CONTACTS" handler={this.enableDetailState} listado={this.state.favoriteContacts} />
-        </div>
-      )
-    } else {
-      return <h2>Loading contacts...</h2>
-    }
-
-    if (this.state.otherContacts.length > 0 ) {
-      return (
-        <div className="container-fluid">
-          <PersonList title="OTHER CONTACTS" handler={this.enableDetailState} listado={this.state.otherContacts} />
-        </div>
-      )
-    } else {
-      return <h2>Loading contacts...</h2>
-    }
+    return (
+    <div className="container-fluid contacts">
+        <header className="title">
+          Contacts
+        </header>
+    <PersonList title="FAVORITE CONTACTS" handler={this.enableDetailState}
+        personList={this.state.favoriteContacts} />
+      <PersonList title="OTHER CONTACTS" handler={this.enableDetailState}
+        personList={this.state.otherContacts} />
+    </div>
+  );
   }
 }
 
