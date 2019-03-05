@@ -5,23 +5,11 @@ import VoidStarIcon from '../Assets/Images/Favorite-Star-(False)/Favorite-False.
 class FavoriteStar extends React.Component {
 
   render() {
-    if (this.props.isFavorite === true) {
-      // return(
-      //   <img class="star-img"
-      //     src="https://www.solstice.com/hs-fs/hubfs/2018/Front%20Page%20Changes/Google_Next_Home-1.png?width=700&amp;name=Google_Next_Home-1.png"
-      //     alt="Star Image"
-      //     title="Star Image"
-      //     caption="false"
-      //     data-constrained="true"
-      //     width="700"
-      //     style="width: 700px;"
-      //     srcset="https://www.solstice.com/hs-fs/hubfs/2018/Front%20Page%20Changes/Google_Next_Home-1.png?width=350&amp;name=Google_Next_Home-1.png 350w, https://www.solstice.com/hs-fs/hubfs/2018/Front%20Page%20Changes/Google_Next_Home-1.png?width=700&amp;name=Google_Next_Home-1.png 700w, https://www.solstice.com/hs-fs/hubfs/2018/Front%20Page%20Changes/Google_Next_Home-1.png?width=1050&amp;name=Google_Next_Home-1.png 1050w, https://www.solstice.com/hs-fs/hubfs/2018/Front%20Page%20Changes/Google_Next_Home-1.png?width=1400&amp;name=Google_Next_Home-1.png 1400w, https://www.solstice.com/hs-fs/hubfs/2018/Front%20Page%20Changes/Google_Next_Home-1.png?width=1750&amp;name=Google_Next_Home-1.png 1750w, https://www.solstice.com/hs-fs/hubfs/2018/Front%20Page%20Changes/Google_Next_Home-1.png?width=2100&amp;name=Google_Next_Home-1.png 2100w"
-      //     sizes="(max-width: 700px) 100vw, 700px">
-        // )
-        return <img src={StarIcon} alt="Favorite" />
-      } else {
-        return <img src={VoidStarIcon} alt="Favorite" />
-      }
+    let iconSrc = StarIcon
+    if (this.props.isFavorite !== true) {
+      iconSrc = VoidStarIcon
     }
+    return <img className="favorite-star" src={iconSrc} alt="Favorite" onClick={this.props.handler} />
   }
-  export default FavoriteStar
+}
+export default FavoriteStar

@@ -7,7 +7,7 @@ class PersonRow extends React.Component {
       <li className="person" onClick={()=>this.props.handler(this.props.person.id)}>
         <PersonIcon picture={this.props.person.smallImageURL} />
         <div className="star column">
-          <FavoriteStar isFavorite={this.props.person.isFavorite}></FavoriteStar>
+          {this.isFavorite()}
         </div>
         <div className="data column">
           <div className="name row">{this.props.person.name}</div>
@@ -15,6 +15,13 @@ class PersonRow extends React.Component {
         </div>
       </li>
     )
+  }
+  isFavorite() {
+    if (this.props.person.isFavorite === true) {
+      return (
+        <span role="img" aria-label="star">⭐</span>
+      )
+    } 
   }
 }
 

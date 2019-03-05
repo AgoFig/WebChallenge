@@ -20,6 +20,7 @@ class App extends Component {
     this.enableDetailState = this.enableDetailState.bind(this)
     this.disableDetailState = this.disableDetailState.bind(this)
     this.getPerson = this.getPerson.bind(this)
+    this.togglePersonIsFavorite = this.togglePersonIsFavorite.bind(this)
   }
   enableDetailState(id) {
     this.setState({person: this.getPerson(id)});
@@ -32,6 +33,24 @@ class App extends Component {
     return this.state.allContacts.find((element) => {
       return element.id === id;
     })
+  }
+  togglePersonIsFavorite(){
+    let element = null;
+    element = this.state.favoriteContacts.find((element) => {
+      if( element.id === this.state.person.id){    
+        element.isFavorite = false;
+        return true;
+      }
+    })
+    if (element === undefined) {
+      element = this.state.favoriteContacts.find((element) => {
+        if( element.id === this.state.person.id)
+        {
+          element.isFavorite = true;
+          return true;
+        }
+      })
+    }
   }
   componentWillMount() {
     fetch(API)
@@ -67,7 +86,8 @@ class App extends Component {
     if(this.state.personDetailViewIsActive === true) {
       if(this.state.person !== null){
         return <PersonDetails person={this.state.person}
-          backHandler={this.disableDetailState} />
+          backHandler={this.disableDetailState}
+          favoriteHandler={this.togglePersonIsFavorite} />
       } else {
         return 'no person found'
       }
@@ -78,16 +98,16 @@ class App extends Component {
   getLists()
   {
     return (
-    <div className="container-fluid contacts">
+      <div className="container-fluid contacts">
         <header className="title">
           Contacts
         </header>
-    <PersonList title="FAVORITE CONTACTS" handler={this.enableDetailState}
-        personList={this.state.favoriteContacts} />
-      <PersonList title="OTHER CONTACTS" handler={this.enableDetailState}
-        personList={this.state.otherContacts} />
-    </div>
-  );
+        <PersonList title="FAVORITE CONTACTS" handler={this.enableDetailState}
+          personList={this.state.favoriteContacts} />
+        <PersonList title="OTHER CONTACTS" handler={this.enableDetailState}
+          personList={this.state.otherContacts} />
+      </div>
+    );
   }
 }
 
