@@ -3,6 +3,7 @@ import PersonList from './Components/PersonList'
 import PersonDetails from './Components/PersonDetails'
 import './Assets/Styles/normalize.css'
 import './Assets/Styles/App.css';
+import './Assets/Styles/Contacts.css'
 
 const API = 'https://s3.amazonaws.com/technical-challenge/v3/contacts.json';
 

@@ -5,6 +5,8 @@ import FavoriteStar from './FavoriteStar'
 import PhoneRow from './PhoneRow'
 import AddressRow from './AddressRow'
 import BirthdateRow from './BirthdateRow'
+import '../Assets/Styles/PersonDetails.css'
+
 class PersonDetails extends React.Component {
 
   render() {

@@ -1,0 +1,26 @@
+.contacts header {
+  justify-content: center;
+}
+
+.contacts .person-icon {
+  width: 33%;
+}
+
+.contacts .star {
+  text-align: right;
+  padding: 3px 5px;
+  width: 8%;
+}
+
+.contacts .data {
+  width: 58%;
+}
+
+.contacts .name {
+  font-size: 1.2em;
+}
+
+.contacts .company {
+  font-size: .9em;
+  color: #b2b2b2;
+}

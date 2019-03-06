@@ -1,0 +1,46 @@
+
+/* Person row */
+.person {
+  display: flex;
+}
+.person-details .card {
+  margin: 25px 15px;
+  text-align: center;
+}
+
+.person-details .person-icon img {
+  width: 55%;
+  max-width: 300px;
+}
+
+.person-details .card .name {
+  font-size: 1.6em;
+}
+
+.person-details .card .company {
+  font-size: 1em;
+  color: #b2b2b2;
+}
+
+.person-details ul li:first-child {
+  border-top: 1px solid #ededed;
+}
+
+.person-details ul li .title {
+  font-size: .7em;
+  color: #b2b2b2;
+}
+
+.person-details ul li {
+  padding: 15px 0;
+}
+
+.phone-row .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phone-row .type {
+  color: #b2b2b2;
+  font-size: .9em;
+}
