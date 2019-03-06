@@ -4,6 +4,12 @@
 
 .contacts .person-icon {
   width: 33%;
+max-width: 300px;
+}
+
+.contacts .person-icon img {
+  width: 100%;
+
 }
 
 .contacts .star {

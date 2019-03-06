@@ -9,7 +9,7 @@ class PersonIcon extends React.Component {
     }
     return (<figure className="person-icon media-left">
       <img onError={(e) => e.target.src = src
-} className="media-object" width="64px" src={this.props.picture}/>
+} className="media-object" src={this.props.picture}/>
     </figure>)
   }
 }
