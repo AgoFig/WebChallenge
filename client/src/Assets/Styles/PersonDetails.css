@@ -1,8 +1,12 @@
-
 /* Person row */
 .person {
   display: flex;
 }
+
+header .action {
+  line-height: 20px;
+}
+
 .person-details .card {
   margin: 25px 15px;
   text-align: center;
@@ -43,4 +47,16 @@
 .phone-row .type {
   color: #b2b2b2;
   font-size: .9em;
+}
+
+.back-arrow {
+  font-size: 1.8em;
+  position: relative;
+  top: 3px;
+}
+
+.favorite-star {
+  height: 20px;
+  width: 20px;
+  align-self: flex-end;
 }
