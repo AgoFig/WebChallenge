@@ -16,7 +16,6 @@ class FavoriteStar extends React.Component {
   		this.props.favoriteHandler(this.state);
   	}
   	handleClick() {
-      alert('');
   		this.setState({isFavorite: !this.state.isFavorite}, this.toggleIsFavorite);
   	}
   render() {
