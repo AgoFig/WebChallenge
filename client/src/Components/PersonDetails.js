@@ -11,7 +11,8 @@ class PersonDetails extends React.Component {
     return (<div className="person-details container-fluid">
       <header>
         <div className="action" onClick={this.props.backHandler}>
-          <span className="back-arrow">&lt;</span> Contacts</div>
+          <span className="back-arrow">&lt;</span>
+          Contacts</div>
         <FavoriteStar isFavoriteStatus={this.props.person.isFavorite} favoriteHandler={this.props.favoriteHandler}></FavoriteStar>
       </header>
 

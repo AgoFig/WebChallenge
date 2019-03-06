@@ -43,8 +43,13 @@ class App extends Component {
 
         element.isFavorite = _State.isFavorite
         this.setState({person: element})
-        this.state.otherContacts.push(element);
+        let otherContacts = this.state.otherContacts.push(element)
         this.state.favoriteContacts.splice(this.state.favoriteContacts.indexOf(element), 1)
+
+        otherContacts = this.sort(this.state.otherContacts);
+        this.setState({ otherContacts: otherContacts})
+
+
         return true;
       }
     })
@@ -55,8 +60,12 @@ class App extends Component {
 
           element.isFavorite = _State.isFavorite
           this.setState({person: element})
-          this.state.favoriteContacts.push(element);
+          let favoriteContacts = this.state.favoriteContacts.push(element)
           this.state.otherContacts.splice(this.state.otherContacts.indexOf(element), 1)
+
+                  favoriteContacts = this.sort(this.state.favoriteContacts);
+                  this.setState({ favoriteContacts: favoriteContacts})
+
           return true;
         }
       })
