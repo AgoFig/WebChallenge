@@ -6,10 +6,10 @@ class FavoriteStar extends React.Component {
 
   render() {
     let iconSrc = StarIcon
-    if (this.props.isFavorite !== true) {
+    if (this.props.isFavoriteStatus !== true) {
       iconSrc = VoidStarIcon
     }
-    return <img className="favorite-star" src={iconSrc} alt="Favorite" onClick={this.props.handler} />
+    return <img className="favorite-star" src={iconSrc} alt="Favorite" onClick={this.props.handler()} />
   }
 }
 export default FavoriteStar

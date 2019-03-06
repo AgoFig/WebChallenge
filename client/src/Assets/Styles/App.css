@@ -4,69 +4,87 @@
   margin: 10px;
   color: #444;
 }
+
 .row {
-  width:100%;
+  width: 100%;
 }
+
 .column {
   flex: auto;
 }
 
 header {
   font-weight: bold;
-  padding-top:40px;
+  padding-top: 3vh;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
   background-color: #f9f9f9;
   border-bottom: 1px solid #ededed;
   text-align: center;
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
 
+.back-arrow {
+  font-size: 1.5em;
+}
+
+.favorite-star {
+  height: 20px;
+  width: 20px;
+align-self: flex-end;
+}
+
 a, .action {
-  color:#4e9dd4;
+  color: #4e9dd4;
 }
 
 /* contacts */
 .contacts header {
   justify-content: center;
 }
-.contacts .person-icon{
-  width:33%;
+
+.contacts .person-icon {
+  width: 33%;
 }
-.contacts .star
-{
+
+.contacts .star {
   text-align: right;
   padding: 3px 5px;
   width: 8%;
 }
-.contacts .data
-{
+
+.contacts .data {
   width: 58%;
 }
-.contacts .name{
+
+.contacts .name {
   font-size: 1.2em;
 }
-.contacts .company{
+
+.contacts .company {
   font-size: .9em;
   color: #b2b2b2;
 }
+
 ul {
   list-style: none;
-  margin:0;
+  margin: 0;
   padding: 0;
 }
+
 ul:last-child {
-margin-bottom: 15px;
+  margin-bottom: 15px;
 }
+
 li {
   border-bottom: 1px solid #ededed;
   padding: 15px;
   margin: 15px;
 }
 
-li:last-child{
+li:last-child {
   margin-bottom: -17px;
   border: none;
 }
@@ -82,9 +100,8 @@ li:last-child{
 }
 
 /* Person row */
-
 .person {
-  display:flex;
+  display: flex;
 }
 
 .row {
@@ -92,13 +109,15 @@ li:last-child{
 }
 
 .person-details .card {
-  padding:25px;
+  margin: 25px 15px;
   text-align: center;
 }
-.person-details .person-icon img{
+
+.person-details .person-icon img {
   width: 55%;
   max-width: 300px;
 }
+
 .person-details .card .name {
   font-size: 1.6em;
 }
@@ -108,7 +127,25 @@ li:last-child{
   color: #b2b2b2;
 }
 
-.person-details ul li .title{
-font-size: .8em;
-color: #b2b2b2;
+.person-details ul li:first-child {
+  border-top: 1px solid #ededed;
+}
+
+.person-details ul li .title {
+  font-size: .7em;
+  color: #b2b2b2;
+}
+
+.person-details ul li {
+  padding: 15px 0;
+}
+
+.phone-row .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phone-row .type {
+  color: #b2b2b2;
+  font-size: .9em;
 }
