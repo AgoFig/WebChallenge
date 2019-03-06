@@ -4,7 +4,6 @@ import PersonDetails from './Components/PersonDetails'
 import './Assets/Styles/normalize.css'
 import './Assets/Styles/App.css';
 
-
 const API = 'https://s3.amazonaws.com/technical-challenge/v3/contacts.json';
 
 class App extends Component {
@@ -35,13 +34,15 @@ class App extends Component {
       return element.id === id;
     })
   }
-  togglePersonIsFavorite(isFavoriteProp) {
+  togglePersonIsFavorite(_State) {
     let element = null;
-    isFavoriteProp = !isFavoriteProp;
+
     element = this.state.favoriteContacts.find((element) => {
       if (element.id === this.state.person.id) {
         element.isFavorite = false;
-        this.state.person.isFavorite = false;
+
+        element.isFavorite = _State.isFavorite
+        this.setState({person: element})
         this.state.otherContacts.push(element);
         this.state.favoriteContacts.splice(this.state.favoriteContacts.indexOf(element), 1)
         return true;
@@ -51,13 +52,16 @@ class App extends Component {
       element = this.state.otherContacts.find((element) => {
         if (element.id === this.state.person.id) {
           element.isFavorite = true;
-          this.state.person.isFavorite = true;
+
+          element.isFavorite = _State.isFavorite
+          this.setState({person: element})
           this.state.favoriteContacts.push(element);
           this.state.otherContacts.splice(this.state.otherContacts.indexOf(element), 1)
           return true;
         }
       })
     }
+
   }
   componentWillMount() {
     fetch(API).then(response => response.json()).then((response) => {
@@ -90,7 +94,7 @@ class App extends Component {
   render() {
     if (this.state.personDetailViewIsActive === true) {
       if (this.state.person !== null) {
-        return <PersonDetails person={this.state.person} isFavoriteStatus={this.state.person.isFavorite} backHandler={this.disableDetailState} favoriteHandler={this.togglePersonIsFavorite}/>
+        return <PersonDetails person={this.state.person} backHandler={this.disableDetailState} favoriteHandler={this.togglePersonIsFavorite}/>
       } else {
         return 'no person found'
       }

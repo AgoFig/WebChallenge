@@ -7,13 +7,12 @@ import AddressRow from './AddressRow'
 import BirthdateRow from './BirthdateRow'
 class PersonDetails extends React.Component {
 
-
   render() {
     return (<div className="person-details container-fluid">
       <header>
         <div className="action" onClick={this.props.backHandler}>
           <span className="back-arrow">&lt;</span> Contacts</div>
-        <FavoriteStar isFavoriteStatus={this.props.isFavoriteStatus} handler={this.props.favoriteHandler}></FavoriteStar>
+        <FavoriteStar isFavoriteStatus={this.props.person.isFavorite} favoriteHandler={this.props.favoriteHandler}></FavoriteStar>
       </header>
 
       <div className="card">

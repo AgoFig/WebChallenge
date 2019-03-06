@@ -1,6 +1,6 @@
 import React from 'react'
 import PersonIcon from './PersonIcon'
-import FavoriteStar from './FavoriteStar'
+
 class PersonRow extends React.Component {
   render() {
     return(
@@ -21,7 +21,7 @@ class PersonRow extends React.Component {
       return (
         <span role="img" aria-label="star">⭐</span>
       )
-    } 
+    }
   }
 }
 
